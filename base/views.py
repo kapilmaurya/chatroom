@@ -152,3 +152,8 @@ def updateProfile(request,pk):
             form.save
             return redirect('user-profile',pk=user.id)
     return render(request, 'base/edit-user.html',context)
+
+
+def Topics(request):
+    topics = Topic.objects.all()
+    return render(request,'base/topics.html',{'topics':topics})
