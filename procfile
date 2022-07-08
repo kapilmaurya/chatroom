@@ -1,1 +1,1 @@
-web: gunicorn base.wsgi --logfile -
+web: gunicorn studybudy.wsgi
