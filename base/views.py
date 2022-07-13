@@ -116,11 +116,12 @@ def loginPage(request):
     return render(request,'base/login_template.html',context)
 
 def signupPage(request):
-    form=UserCreationForm(request.POST) 
-    if form.is_valid():
-        form.save()
-        return redirect('login')
-    context={'form':form}       
+    form=UserCreationForm(request.POST)
+    if request.method == 'POST': 
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        context={'form':form}       
     return render(request,'base/signup.html',context)
 
 
