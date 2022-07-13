@@ -126,7 +126,7 @@ def signupPage(request):
         login(request,user)
         return redirect('home')
     else:
-        print('bhr hu')
+        # print('bhr hu')
     context={'form':form}       
     return render(request,'base/signup.html',context)
 
