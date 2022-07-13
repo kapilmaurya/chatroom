@@ -11,11 +11,12 @@
           <div class="layout__body">
             <h2 class="auth__tagline">Find your study partner</h2>
 
-            <form class="form" action="#">
+            <form class="form" action="#" method="post">
+              {% csrf_token %}
               <div class="form__group form__group">
-                {{form.name}}
+                {{form}}
               </div>
-              <div class="form__group form__group">
+              <!-- <div class="form__group form__group">
                 <label for="room_name">Username</label>
                 <input id="username" name="username" type="text" placeholder="e.g. dennis_ivy" />
               </div>
@@ -37,7 +38,7 @@
                   type="password"
                   placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
                 />
-              </div>
+              </div> -->
 
               <button class="btn btn--main" type="submit">
                 <svg
@@ -62,7 +63,7 @@
 
             <div class="auth__action">
               <p>Already have an account?</p>
-              <a href="login.html" class="btn btn--link">Log In</a>
+              <a href="{% url 'login' %}" class="btn btn--link">Log In</a>
             </div>
           </div>
         </div>
