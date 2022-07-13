@@ -168,7 +168,7 @@ def updateProfile(request,pk):
         if form.is_valid():
             form.save
             return redirect('user-profile',pk=user.id)
-    return render(request, 'base/edit-user.html',context)
+    return render(request, 'base/edit-user.html')
 
 
 def Topics(request):
