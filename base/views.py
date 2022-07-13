@@ -117,7 +117,7 @@ def loginPage(request):
 
 def signupPage(request):
     form=UserCreationForm()
-    if request.method=='POST':
+    if request.method == 'POST':
         form=UserCreationForm(request.POST)
         if form.is_valid():
             user=form.save(commit=False)
